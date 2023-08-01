@@ -5,7 +5,7 @@
 
 ## Descripcion of the project:
 
-###Is a platform that connects travelers with people who have a space available to share in their homes and want to generate extra income.
+### Is a platform that connects travelers with people who have a space available to share in their homes and want to generate extra income.
 
 ## Description of the command interpreter:
 
