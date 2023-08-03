@@ -13,8 +13,8 @@ class BaseModel():
         updated_at (datetime.datetime):
     """
 
-    def __init__(self, *args, **kwargs):
-        """class constructor"""
+    def __init__(self):
+        """This is a constructor of the class"""
 
         self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
