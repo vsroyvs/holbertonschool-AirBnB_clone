@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """AirBnB clone - The console """
 from datetime import datetime
-from uuid import uuid4
+import uuid
 
 
 class BaseModel():
@@ -12,14 +12,13 @@ class BaseModel():
         created_at (datetime.datetime):
         updated_at (datetime.datetime):
     """
+
     def __init__(self, *args, **kwargs):
         """class constructor"""
 
-        # self.created_at = datetime.strptime('created_at')
-        # self.updated_at = datetime.strptime('updated_at')
+        self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
-        self.id = str(uuid4())
 
     def __str__(self):
         """Returns the string representation of BaseModel."""
