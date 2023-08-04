@@ -13,12 +13,20 @@ class BaseModel():
         updated_at (datetime.datetime):
     """
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """This is a constructor of the class"""
-
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = self.created_at
+        if kwargs:
+            kwargs['created_at'] = datetime.strptime(kwargs['created_ad'],
+                                                     '%Y-%m-%dT%H:%M:%S.%f')
+            kwargs['updated_at'] = datetime.strptime(kwargs['updated_at'],
+                                                     '%Y-%m-%dT%H:%M:%S.%f')
+            for key, value in kwargs.items():
+                if key != '__class__':
+                    setattr(self, key, value)
+        else:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
 
     def __str__(self):
         """Returns the string representation of BaseModel."""
