@@ -16,7 +16,7 @@ class BaseModel():
     def __init__(self, *args, **kwargs):
         """This is a constructor of the class"""
         if kwargs:
-            kwargs['created_at'] = datetime.strptime(kwargs['created_ad'],
+            kwargs['created_at'] = datetime.strptime(kwargs['created_at'],
                                                      '%Y-%m-%dT%H:%M:%S.%f')
             kwargs['updated_at'] = datetime.strptime(kwargs['updated_at'],
                                                      '%Y-%m-%dT%H:%M:%S.%f')
