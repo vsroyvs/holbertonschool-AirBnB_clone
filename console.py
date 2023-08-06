@@ -10,6 +10,7 @@ from models import storage
 class HBNBCommand(cmd.Cmd):
     """This class defines the command interpreter"""
     prompt = '(hbnb) '
+    __classes = ['BaseModel']
 
     def do_quit(self, arg):
         """Quit Command to exit the program"""
