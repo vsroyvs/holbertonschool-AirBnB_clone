@@ -35,7 +35,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         else:
             new_instance = eval(args[0] + '()')
-            models.storage.save()
+            storage.save()
             print(new_instance.id)
 
     def do_show(self, text):
@@ -49,7 +49,7 @@ class HBNBCommand(cmd.Cmd):
         elif len(args) == 1:
             print("** instance id missing **")
         else:
-            obj = models.storage.all()
+            obj = storage.all()
             key = "{}.{}".format(args[0], args[1])
             if key not in obj:
                 print("** no instance found **")
@@ -81,7 +81,7 @@ class HBNBCommand(cmd.Cmd):
             Usage: all <class name>
         """
         args = text.split()
-        objects = models.storage.all()
+        objects = storage.all()
         new_list = []
         if len(args) == 0:
             for obj in objects.values():
@@ -99,7 +99,7 @@ class HBNBCommand(cmd.Cmd):
         """Updates an instance
             Usage update <class name> <id> <attribute name> '<attribute value>'
         """
-        objects = models.storage.all()
+        objects = storage.all()
         args = text.split(" ")
 
         if len(args) == 0:
@@ -121,7 +121,7 @@ class HBNBCommand(cmd.Cmd):
                 return
 
             setattr(obj, args[2], args[3].lstrip('"').rstrip('"'))
-            models.storage.save()
+            storage.save()
 
 
 if __name__ == '__main__':
