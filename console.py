@@ -61,7 +61,7 @@ class HBNBCommand(cmd.Cmd):
             Usage: destroy <class name> <id>
         """
         args = text.split()
-        obj = models.storage.all()
+        obj = storage.all()
         if len(args) == 0:
             print("** class name missing **")
         elif args[0] not in HBNBCommand.__classes:
