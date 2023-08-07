@@ -99,8 +99,7 @@ class HBNBCommand(cmd.Cmd):
         """Updates an instance
             Usage update <class name> <id> <attribute name> '<attribute value>'
         """
-        objects = storage.all()
-        args = text.split(" ")
+        args = text.split()
 
         if len(args) == 0:
             print("** class name missing **")
@@ -113,15 +112,13 @@ class HBNBCommand(cmd.Cmd):
         elif len(args) == 3:
             print("** value missing **")
         else:
+            objects = storage.all()
             key = "{}.{}".format(args[0], args[1])
-            obj = objects.get(key, None)
-
-            if not obj:
+            if key not in objects:
                 print("** no instance found **")
-                return
-
-            setattr(obj, args[2], args[3].lstrip('"').rstrip('"'))
-            storage.save()
+                
+            setattr(objects[key], args[2], args[3])
+            objects[key].save()
 
 
 if __name__ == '__main__':
