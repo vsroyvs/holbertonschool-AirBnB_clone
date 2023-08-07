@@ -116,7 +116,8 @@ class HBNBCommand(cmd.Cmd):
             key = "{}.{}".format(args[0], args[1])
             if key not in objects:
                 print("** no instance found **")
-                
+                return
+
             setattr(objects[key], args[2], args[3])
             objects[key].save()
 
