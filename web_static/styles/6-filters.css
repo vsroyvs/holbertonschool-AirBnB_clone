@@ -50,10 +50,12 @@ h4 {
 
 .locations:hover .popover {
     display: block;
+    z-index: 1;
 }
 
 .amenities:hover .popover {
     display: block;
+    z-index: 1;
 }
 
 .popover li {
