@@ -58,7 +58,7 @@ class TestPlace(unittest.TestCase):
 
     def test_amenity_ids(self):
         place1 = Place()
-        self.assertEqual(type(place1.amenity_ids), str)
+        self.assertEqual(type(place1.amenity_ids), list)
         self.assertIsNotNone(place1.amenity_ids, "attribute is None")
 
 

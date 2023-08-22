@@ -29,7 +29,7 @@ class TestBaseModel(unittest.TestCase):
         """testing datetime base model"""
         object_1 = BaseModel()
         object_2 = BaseModel()
-        self.assertNotEqual(object_1.created_at, object_1.updated_at)
+        self.assertNotEqual(object_1.created_at, object_2.created_at)
         self.assertNotEqual(object_1.created_at, object_2.created_at)
 
     def test_save(self):

@@ -12,7 +12,7 @@ class TestCity(unittest.TestCase):
 
     def test_name(self):
         city1 = City()
-        self.assertEquals(type(city1.name),str)
+        self.assertEqual(type(city1.name),str)
         self.assertIsNotNone(city1.name, "attribute is None")
 
 
